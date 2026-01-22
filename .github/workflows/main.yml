@@ -1,0 +1,13 @@
+name: test Project
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print welcome message
+        run: echo "Welcome to the Laravel GitHub Actions workflow!"
