@@ -23,3 +23,4 @@ php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
 
 # Start server
 php artisan serve
+

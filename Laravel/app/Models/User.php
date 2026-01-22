@@ -11,17 +11,20 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+protected $fillable = [
+    'name',
+    'email',
+    'password',
+    'github_id',
+    'avatar',
+    'github_token',
+];
 
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
-
+protected $hidden = [
+    'password',
+    'remember_token',
+    'github_token', // Hide sensitive token
+];
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',

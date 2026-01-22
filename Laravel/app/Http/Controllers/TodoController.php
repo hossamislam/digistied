@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\TodoResoruce;
+use App\Models\Todo;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Validator;
 
 class TodoController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $todos = $request->user()->todos()->orderBy('created_at', 'desc')->get();
-        return response()->json($todos);
+        $todos = Todo::all();
+        return TodoResoruce::collection($todos);
     }
 
     public function store(Request $request)
