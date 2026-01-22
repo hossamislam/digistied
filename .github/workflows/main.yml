@@ -11,3 +11,9 @@ jobs:
     steps:
       - name: print welcome message
         run: echo "Welcome to the Laravel GitHub Actions workflow!"
+
+      - name: Checkout
+        uses: actions/checkout@v4 
+        
+      - name: List repo files
+        run: ls -la
